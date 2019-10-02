@@ -1,0 +1,25 @@
+body {
+    background-color: #f9faff;
+}
+
+.Header {
+    height          : 64px;
+    background-color: #ffffff;
+}
+
+#Link {
+    font-family   : Roboto !important;
+    font-size     : 14px !important;
+    font-weight   : 500 !important;
+    font-style    : normal !important;
+    font-stretch  : normal !important;
+    line-height   : normal !important;
+    letter-spacing: 0.3px !important;
+    color         : #071eb3 !important;
+}
+
+.BodyPart{
+    margin-top: 184px;
+    margin-bottom: 2%
+}
+

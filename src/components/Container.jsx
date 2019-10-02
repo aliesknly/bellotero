@@ -7,7 +7,7 @@ const Container = ({ children }) => {
     return (
         <div>
             <Header />
-            <Body>
+            <Body className="BodyPart">
                 {children}
             </Body>
         </div>

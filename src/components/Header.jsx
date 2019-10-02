@@ -24,7 +24,7 @@ const Header = ({list, menuLoadRequest}) => {
         return function cleanup() {
 
         }
-    },[!list])
+    },[menuLoadRequest])
     
     
     const handleToggle = () => {
@@ -32,7 +32,7 @@ const Header = ({list, menuLoadRequest}) => {
     }
     return (
         <div>
-            <Navbar color="light" light expand="md">
+            <Navbar className="Header" light expand="md">
                 <Container>
                     <NavbarBrand href="/"><img src="bellotero.png" alt="logo" /></NavbarBrand>
                     <NavbarToggler onClick={handleToggle} />
@@ -41,7 +41,7 @@ const Header = ({list, menuLoadRequest}) => {
                             {
                                 list.map((item, key) => (
                                     <NavItem key={key}>
-                                        <Link to={item.route}>{item.text}</Link>
+                                        <Link id="Link" className="nav-link" to={item.route}>{item.text}</Link>
                                     </NavItem>
                                 ))
                             }
