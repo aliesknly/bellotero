@@ -5,17 +5,18 @@ import PropTypes from 'prop-types';
 import { page1LoadRequest } from '../../actions';
 //Components
 import Titles from '../Titles';
-import { Col, Row } from 'reactstrap';
+import { Col, Row ,Spinner} from 'reactstrap';
 import ContentBox from '../ContentBox';
 
-const Page1 = ({ title,information, page1LoadRequest }) => {
+const Page1 = ({ loading,title,information, page1LoadRequest }) => {
     useEffect(() => {
         page1LoadRequest()
     }, [page1LoadRequest])
 
-    
     return (
+        (loading && <Spinner style={{ width: '16rem', height: '16rem'}} type="grow" />) ||
         <div>
+            
             <Row>
                 <Col sm="5">
                     <Titles title={title} />
@@ -34,12 +35,14 @@ const Page1 = ({ title,information, page1LoadRequest }) => {
 }
 
 Page1.propTypes = {
+    loading:PropTypes.bool.isRequired,
     title: PropTypes.string.isRequired,
     page1LoadRequest: PropTypes.func.isRequired,
     information:PropTypes.object.isRequired
 }
 
 const mapStateToProps = (state) => ({
+    loading:state.page1LoadStatusReducer.loading,
     title: state.page1Reducers.title,
     information: state.page1Reducers.information,
 })

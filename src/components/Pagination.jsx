@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 //Actions
@@ -6,15 +6,13 @@ import { page1PaginationNext, page1PaginationPrevious } from '../actions';
 //Components
 import { Button, ButtonGroup } from 'reactstrap'
 
-const Pagination = ({ list, page1PaginationNext, page1PaginationPrevious }) => {
-    const [count, setCount] = useState(0)
+const Pagination = ({ count,list, page1PaginationNext, page1PaginationPrevious }) => {
+    
     const pagePrevious = () => {
-        setCount(count - 1)
         page1PaginationPrevious()
     }
 
     const pageNext = () => {
-        setCount(count + 1)
         page1PaginationNext()
     }
 
@@ -66,12 +64,14 @@ const styles = {
 
 Pagination.propTypes = {
     list: PropTypes.array.isRequired,
+    count: PropTypes.number.isRequired,
     page1PaginationNext: PropTypes.func.isRequired,
     page1PaginationPrevious: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({
     list: state.page1Reducers.list,
+    count: state.page1Reducers.count,
     information: state.page1Reducers.information,
 })
 

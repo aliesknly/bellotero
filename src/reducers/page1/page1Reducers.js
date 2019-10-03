@@ -6,7 +6,6 @@ const initialState = {
     list: [],
     information: {},
     count: 0
-
 }
 
 export default (state = initialState, { type, payload }) => {
@@ -14,9 +13,10 @@ export default (state = initialState, { type, payload }) => {
         case types.PAGE1_LOAD_SUCCESS:
             return {
                 ...state,
-                list: state.list.concat(payload.reviews),
+                count: 0,
+                list: payload.reviews,
                 title: payload.title,
-                information: payload.reviews[state.count]
+                information: payload.reviews[0]
             }
         case types.PAGE1_PREVIOUS:
             return {
