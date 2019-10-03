@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { page1PaginationNext, page1PaginationPrevious } from '../actions';
 //Components
 import { Button, ButtonGroup } from 'reactstrap'
+import {FaArrowLeft,FaArrowRight} from 'react-icons/fa'
 
 const Pagination = ({ count, list, page1PaginationNext, page1PaginationPrevious }) => {
 
@@ -22,8 +23,8 @@ const Pagination = ({ count, list, page1PaginationNext, page1PaginationPrevious 
                 <p className={"pagination-text"} style={styles.pageText}>{`${count + 1}/${list.length}`}</p>
             </div>
             <ButtonGroup>
-                <Button disabled={count === 0 && true} onClick={pagePrevious} style={styles.pageButton}>{'<-'}</Button>
-                <Button disabled={count === list.length - 1 && true} onClick={pageNext} style={styles.pageButton}>{'->'}</Button>
+                <Button disabled={count === 0 && true} onClick={pagePrevious} style={styles.pageButton}><FaArrowLeft/></Button>
+                <Button disabled={count === list.length - 1 && true} onClick={pageNext} style={styles.pageButton}><FaArrowRight/></Button>
             </ButtonGroup>
         </div>
     )
