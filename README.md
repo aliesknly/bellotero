@@ -80,3 +80,6 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 **Page Configurator**
 <a href="screenshots/page-configurator.jpg">View</a>
 <img src="screenshots/page-configurator.jpg" alt="configurator"/>
+
+<a href="screenshoots/page-configurator.jpg">View</a>
+<img src="screenshoots/page-configurator.jpg" alt="configurator"/>
