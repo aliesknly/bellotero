@@ -165,15 +165,25 @@ input[type="range"]::-moz-range-progress {
 /*Chrome*/
 
 input[type="range"]::-webkit-progress-value {
-    background-color: #43e5f7;
+    background-color: #071eb3;
 }
-
-
-/*TESTS*/
 
 .pagination-text {
     font-style: italic;
     font-family: "Cormorant Garamond SemiBold", cursive;
     font-size: 32px;
+    font-weight: 600;
+    font-stretch: normal;
+}
+
+.link-modify{
+    font-family: "Roboto Medium";
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.3px;
+    color: #071eb3;
 }
 

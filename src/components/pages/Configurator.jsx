@@ -11,14 +11,14 @@ import Calculator from './Calculator';
 const Configurator = ({ loading,information, page2LoadRequest }) => {
     useEffect(() => {
         page2LoadRequest()
-    }, [page2LoadRequest])
+    }, [page2LoadRequest]);
 
     return (
         (loading && <Spinner style={{ width: '16rem', height: '16rem'}} type="grow" />) ||
         <div>
             
             <Row>
-                <Col sm='5' >
+                <Col sm='4' >
                     <Titles title={information.title} />
                     <br/>
                     <p style={styles.description}>
@@ -26,7 +26,7 @@ const Configurator = ({ loading,information, page2LoadRequest }) => {
                     </p>
                 </Col>
                 <Col sm="1"/>
-                <Col sm="6">
+                <Col sm="7">
                     <Calculator/>
                 </Col>
             </Row>

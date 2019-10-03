@@ -7,11 +7,11 @@ const ContentBox = ({information}) => {
     return (
         <div style={styles.box}>
             <Row>
-                <Col sm="4">
+                <Col sm="5">
                     <h2 style={styles.name}>{name}</h2>
                     <p style={styles.position}>{position}</p>
                 </Col>
-                <Col sm="8">
+                <Col sm="7">
                         <p style={styles.comment}>{comment}
                     </p>
                     <Row>
@@ -56,7 +56,6 @@ const styles = {
     },
     position: {
         font:'Roboto-Regular',
-        width: '95px',
         height: '16px',
         fontFamily: 'Roboto',
         fontSize: '14px',

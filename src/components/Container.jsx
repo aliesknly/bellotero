@@ -12,6 +12,6 @@ const Container = ({ children }) => {
             </Body>
         </div>
     )
-}
+};
 
 export default Container

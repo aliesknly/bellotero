@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
 //ACTIONS
 import {menuLoadRequest} from '../actions';
-//Componets
+//Components
 import {
     Container,
     Collapse,
@@ -17,19 +17,19 @@ import {
 
 
 const Header = ({list, menuLoadRequest}) => {
-    const [toggle, setToggle] = useState(false)
+    const [toggle, setToggle] = useState(false);
 
     useEffect(()=>{
-        menuLoadRequest()
+        menuLoadRequest();
         return function cleanup() {
 
         }
-    },[menuLoadRequest])
+    },[menuLoadRequest]);
     
     
     const handleToggle = () => {
         setToggle(!toggle)
-    }
+    };
     return (
         <div>
             <Navbar className="Header" light expand="md">
@@ -41,7 +41,7 @@ const Header = ({list, menuLoadRequest}) => {
                             {
                                 list.map((item, key) => (
                                     <NavItem key={key}>
-                                        <Link id="Link" className="nav-link" to={item.route}>{item.text}</Link>
+                                        <Link  id="Link" className="nav-link active link-modify" to={item.route}>{item.text}</Link>
                                     </NavItem>
                                 ))
                             }
@@ -51,19 +51,19 @@ const Header = ({list, menuLoadRequest}) => {
             </Navbar>
         </div>
     )
-}
+};
 
 Header.propTypes = {
     list: PropTypes.array,
     menuLoadRequest:PropTypes.func.isRequired,
-}
+};
 
 const mapStateToProps = (state) => ({
     list: state.menuReducer.list,
-})
+});
 
 const mapDispatchToProps = {
     menuLoadRequest
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header) 

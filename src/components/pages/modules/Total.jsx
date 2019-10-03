@@ -19,7 +19,7 @@ const styles = {
     },
     value: {
         fontFamily: 'Roboto',
-        fontSize: '72px',
+        fontSize: '60pt',
         fontWeight: '500',
         fontStyle: 'normal',
         fontStretch: 'normal',

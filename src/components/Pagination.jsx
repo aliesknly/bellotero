@@ -45,10 +45,6 @@ const styles = {
     },
     pageText: {
         marginBottom: 0,
-        fontSize: '32px',
-        fontWeight: '600',
-        fontStyle: 'italic',
-        fontStretch: 'normal',
         lineHeight: 1,
         letterSpacing: '0.69px',
         color: '#ffffff',
