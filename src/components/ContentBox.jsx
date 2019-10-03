@@ -1,18 +1,25 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
+import Pagination from './Pagination';
 
-const ContentBox = () => {
+const ContentBox = ({information}) => {
+    const {name, position,comment} = information
     return (
         <div style={styles.box}>
             <Row>
                 <Col sm="4">
-                    <h2 style={styles.name}>Pete Zahut</h2>
-                    <p style={styles.position}>Chef @ Maniak</p>
+                    <h2 style={styles.name}>{name}</h2>
+                    <p style={styles.position}>{position}</p>
                 </Col>
                 <Col sm="8">
-                    <p style={styles.coment}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iusto totam dolore praesentium animi, magni illo. Vitae quas consectetur at consequatur accusamus aperiam, ducimus perferendis soluta est dicta fugit quasi?
-                   </p>
+                        <p style={styles.coment}>{comment}
+                    </p>
+                    <Row>
+                        <Col></Col>
+                        <Col>
+                            <Pagination style={styles.pagination}/>
+                        </Col>
+                    </Row>
                 </Col>
             </Row>
         </div>
@@ -26,8 +33,6 @@ const styles = {
         backgroundColor: '#ffffff',
     },
     coment: {
-        width: '565px',
-        height: '190px',
         fontFamily: 'Roboto',
         fontSize: '24px',
         fontWeight: 'bold',
@@ -58,6 +63,9 @@ const styles = {
         lineHeight: 'normal',
         letterSpacing: 'normal',
         color: '#a5a5a5',
+    },
+    pagination: {
+        alignSelf: "flex-end",
     }
 
 }
