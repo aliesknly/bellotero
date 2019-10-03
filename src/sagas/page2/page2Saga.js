@@ -7,7 +7,7 @@ import { apiGET } from '../../apiMethods'
 
 const apiCALL = () => {
     return apiGET("page2.json").catch(err=>console.log(err))
-}
+};
 
 const sagaRequest = function* sagaRequest() {
     try {
