@@ -20,6 +20,7 @@ const Configurator = ({ loading,information, page2LoadRequest }) => {
             <Row>
                 <Col sm='5' >
                     <Titles title={information.title} />
+                    <br/>
                     <p style={styles.description}>
                         {information.description}
                     </p>

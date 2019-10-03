@@ -3,7 +3,7 @@ import { Row, Col } from 'reactstrap';
 import Pagination from './Pagination';
 
 const ContentBox = ({information}) => {
-    const {name, position,comment} = information
+    const {name, position,comment} = information;
     return (
         <div style={styles.box}>
             <Row>
@@ -12,10 +12,10 @@ const ContentBox = ({information}) => {
                     <p style={styles.position}>{position}</p>
                 </Col>
                 <Col sm="8">
-                        <p style={styles.coment}>{comment}
+                        <p style={styles.comment}>{comment}
                     </p>
                     <Row>
-                        <Col></Col>
+                        <Col/>
                         <Col>
                             <Pagination style={styles.pagination}/>
                         </Col>
@@ -24,7 +24,7 @@ const ContentBox = ({information}) => {
             </Row>
         </div>
     )
-}
+};
 
 const styles = {
     box: {
@@ -32,8 +32,9 @@ const styles = {
         paddingLeft: '20px',
         backgroundColor: '#ffffff',
     },
-    coment: {
+    comment: {
         fontFamily: 'Roboto',
+        font:'Roboto-Bold',
         fontSize: '24px',
         fontWeight: 'bold',
         fontStyle: 'normal',
@@ -43,6 +44,7 @@ const styles = {
         color: '#161616',
     },
     name: {
+        font:'Roboto-Bold',
         fontFamily: 'Roboto',
         fontSize: '32px',
         fontWeight: 'bold',
@@ -53,6 +55,7 @@ const styles = {
         color: '#161616'
     },
     position: {
+        font:'Roboto-Regular',
         width: '95px',
         height: '16px',
         fontFamily: 'Roboto',
@@ -68,7 +71,7 @@ const styles = {
         alignSelf: "flex-end",
     }
 
-}
+};
 
 
 export default ContentBox

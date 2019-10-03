@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 //Component
-import { Row, Col, FormGroup, CustomInput } from 'reactstrap';
+import { Row, Col, FormGroup} from 'reactstrap';
 import Labels from './modules/Labels';
 import Values from './modules/Values';
 import Counter from './modules/Counter';
@@ -8,17 +8,17 @@ import Total from './modules/Total';
 import Label from './modules/Labels';
 
 const Calculator = () => {
-    const [ingredient, setIngredient] = useState(10)
-    const [employee, setEmployee] = useState(1)
+    const [ingredient, setIngredient] = useState(36.211);
+    const [employee, setEmployee] = useState(8);
 
     const handleChangeIngredients = ({ target }) => {
-        const { value } = target
+        const { value } = target;
         setIngredient(value)
-    }
+    };
     const handleChangeEmployee = ({ target }) => {
-        const { value } = target
+        const { value } = target;
         setEmployee(value)
-    }
+    };
 
     return (
         <div>
@@ -33,7 +33,7 @@ const Calculator = () => {
             <Row>
                 <Col>
                     <FormGroup>
-                        <CustomInput type="range" 
+                        <input type="range" 
                         id="ingredientRange" 
                         name="ingredientRange" 
                         min={10} max={100} 
@@ -53,7 +53,7 @@ const Calculator = () => {
             <Row>
                 <Col sm={12}>
                     <FormGroup>
-                        <CustomInput type="range" 
+                        <input type="range" 
                         id="employeeRange" 
                         name="employeeRange" 
                         min={1} max={10} 
@@ -69,14 +69,14 @@ const Calculator = () => {
                     <Label>Estimated cost food savings</Label>
                 </div>
                 <div style={styles.totals}>
-                    <Total>{(employee * 1337 + (ingredient * 0.3).toPrecision(2))}</Total>
+                    <Total>{employee * 1337 + (ingredient * 0.3)}</Total>
                     <Label>Estimated cost food savings</Label>
                 </div>
             </div>
 
         </div>
     )
-}
+};
 
 const styles = {
     box: {
@@ -96,6 +96,6 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'flex-end'
     }
-}
+};
 
 export default Calculator

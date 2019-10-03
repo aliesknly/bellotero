@@ -6,20 +6,20 @@ import { page1PaginationNext, page1PaginationPrevious } from '../actions';
 //Components
 import { Button, ButtonGroup } from 'reactstrap'
 
-const Pagination = ({ count,list, page1PaginationNext, page1PaginationPrevious }) => {
-    
+const Pagination = ({ count, list, page1PaginationNext, page1PaginationPrevious }) => {
+
     const pagePrevious = () => {
         page1PaginationPrevious()
-    }
+    };
 
     const pageNext = () => {
         page1PaginationNext()
-    }
+    };
 
     return (
         <div style={styles.containerBox}>
             <div style={styles.pageBox}>
-                <p style={styles.pageText}>{`${count + 1}/${list.length}`}</p>
+                <p className={"pagination-text"} style={styles.pageText}>{`${count + 1}/${list.length}`}</p>
             </div>
             <ButtonGroup>
                 <Button disabled={count === 0 && true} onClick={pagePrevious} style={styles.pageButton}>{'<-'}</Button>
@@ -27,7 +27,7 @@ const Pagination = ({ count,list, page1PaginationNext, page1PaginationPrevious }
             </ButtonGroup>
         </div>
     )
-}
+};
 
 const styles = {
     containerBox: {
@@ -45,8 +45,6 @@ const styles = {
     },
     pageText: {
         marginBottom: 0,
-        height: '32px',
-        fontFamily: 'CormorantGaramond',
         fontSize: '32px',
         fontWeight: '600',
         fontStyle: 'italic',
@@ -60,24 +58,24 @@ const styles = {
         height: '56px',
         backgroundColor: '#071eb3',
     }
-}
+};
 
 Pagination.propTypes = {
     list: PropTypes.array.isRequired,
     count: PropTypes.number.isRequired,
     page1PaginationNext: PropTypes.func.isRequired,
     page1PaginationPrevious: PropTypes.func.isRequired
-}
+};
 
 const mapStateToProps = (state) => ({
     list: state.page1Reducers.list,
     count: state.page1Reducers.count,
     information: state.page1Reducers.information,
-})
+});
 
 const mapDispatchToProps = {
     page1PaginationNext,
     page1PaginationPrevious
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Pagination)

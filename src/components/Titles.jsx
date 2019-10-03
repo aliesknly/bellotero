@@ -10,7 +10,6 @@ const Titles = ({ title }) => {
 
 const styles = {
     box: {
-        height: '56px',
         backgroundColor: '#071eb3',
         display: 'flex',
         flexDirection: 'row',
@@ -20,8 +19,7 @@ const styles = {
 
     },
     title: {
-        height: '40px',
-        fontFamily: 'Roboto-Black',
+        font: 'Roboto-Black',
         fontSize: '36px',
         fontWeight: '900',
         fontStyle: 'normal',
