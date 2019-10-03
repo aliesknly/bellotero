@@ -76,9 +76,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ##ScreenShots
 **Page Testimonial**
 <a href="screenshoots/page-testimonial.jpg">View</a>
+<img src="screenshoots/page-testimonial.jpg" alt="testimonial"/>
 
 **Page Configurator**
 <a href="screenshoots/page-configurator.jpg">View</a>
+<img src="screenshoots/page-configurator.jpg" alt="configurator"/>
 
 ## Learn More
 
