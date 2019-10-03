@@ -6,7 +6,7 @@ import { page1LoadFail, page1LoadSuccess } from '../../actions'
 import { apiGET } from '../../apiMethods'
 
 const apiCALL = () => {
-    return apiGET("page1").catch(err=>console.log(err))
+    return apiGET("page1.json").catch(err=>console.log(err))
 }
 
 const sagaRequest = function* sagaRequest() {

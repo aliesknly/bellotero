@@ -6,7 +6,7 @@ import { menuLoadFaild, menuLoadSuccess } from '../../actions'
 import { apiGET } from '../../apiMethods'
 
 const apiCALL = () => {
-    return apiGET("app").catch(err=>console.log(err))
+    return apiGET("app.json").catch(err=>console.log(err))
 }
 
 const sagaRequest = function* sagaRequest() {
