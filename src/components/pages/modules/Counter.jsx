@@ -2,16 +2,16 @@ import React from 'react';
 
 const Counter = ({ children }) => {
     return (
-        <div style={styles.box}>
+        <div className={"counter-value"} style={styles.box}>
             <h4 style={styles.value}>{children}</h4>
         </div>
     )
-}
+};
 
 const styles = {
     box: {
         display: 'flex',
-        justifyContent: 'right',
+        justifyContent: 'flex-end',
         alignItems: 'center',
         width: '67px',
         height: '52px',

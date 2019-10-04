@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 //Component
 import {Row, Col, FormGroup} from 'reactstrap';
 import Labels from './modules/Labels';
@@ -20,6 +20,7 @@ const Calculator = () => {
         setEmployee(value)
     };
 
+
     return (
         <div>
             <div style={styles.boxLabels}>
@@ -34,7 +35,7 @@ const Calculator = () => {
                 <Col>
                     <FormGroup>
                         <input type="range"
-                               id="ingredientRange"
+                               id="myRange"
                                name="ingredientRange"
                                min={10} max={100} step={0.001}
                                onChange={handleChangeIngredients}
@@ -54,7 +55,7 @@ const Calculator = () => {
                 <Col sm={12}>
                     <FormGroup>
                         <input type="range"
-                               id="employeeRange"
+                               id="myRange"
                                name="employeeRange"
                                min={1} max={10}
                                onChange={handleChangeEmployee}
@@ -65,15 +66,14 @@ const Calculator = () => {
             <br/>
             <div style={styles.box}>
                 <div style={styles.totals}>
-                    <Total>{Math.round((ingredient * 0.3) * 100) / 100}</Total>
+                    <Total>{Math.round((ingredient * 0.3) * 1000) / 1000}</Total>
                     <Label>Estimated cost food savings</Label>
                 </div>
                 <div style={styles.totals}>
-                    <Total>{Math.round((employee * 1337 + (ingredient * 0.3))*100)/100}</Total>
+                    <Total>{Math.round((employee * 1337 + (ingredient * 0.3)) * 1000) / 1000}</Total>
                     <Label>Estimated cost food savings</Label>
                 </div>
             </div>
-
         </div>
     )
 };
