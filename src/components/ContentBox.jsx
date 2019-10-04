@@ -40,7 +40,7 @@ const styles = {
         fontStyle: 'normal',
         fontStretch: 'normal',
         lineHeight: '1.33',
-        letterSpacing: 'normal',
+        letterSpacing: '0',
         color: '#161616',
     },
     name: {

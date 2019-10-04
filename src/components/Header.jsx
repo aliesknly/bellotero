@@ -1,52 +1,41 @@
-import React, { useState ,useEffect} from 'react'
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
+import React, { useEffect} from 'react'
+import {connect} from 'react-redux'
 import PropTypes from 'prop-types';
 //ACTIONS
-import {menuLoadRequest} from '../actions';
+import {menuLoadRequest,linkChange} from '../actions';
 //Components
 import {
     Container,
-    Collapse,
     Navbar,
-    NavbarToggler,
     NavbarBrand,
-    Nav,
-    NavItem,
 } from 'reactstrap'
+import ItemMenu from "./menu/ItemMenu";
 
 
-const Header = ({list, menuLoadRequest}) => {
-    const [toggle, setToggle] = useState(false);
-
-    useEffect(()=>{
+const Header = ({list, menuLoadRequest,linkChange,path}) => {
+    useEffect(() => {
+        linkChange(window.location.pathname);
         menuLoadRequest();
         return function cleanup() {
 
         }
-    },[menuLoadRequest]);
-    
-    
-    const handleToggle = () => {
-        setToggle(!toggle)
-    };
+    }, [linkChange,menuLoadRequest]);
+
     return (
         <div>
             <Navbar className="Header" light expand="md">
                 <Container>
-                    <NavbarBrand href="/"><img src="bellotero.png" alt="logo" /></NavbarBrand>
-                    <NavbarToggler onClick={handleToggle} />
-                    <Collapse isOpen={toggle} navbar>
-                        <Nav className="ml-auto" navbar>
-                            {
-                                list.map((item, key) => (
-                                    <NavItem key={key}>
-                                        <Link  id="Link" className="nav-link active link-modify" to={item.route}>{item.text}</Link>
-                                    </NavItem>
-                                ))
-                            }
-                        </Nav>
-                    </Collapse>
+                    <div className={'col-6'}>
+                        <NavbarBrand href="/"><img src="bellotero.png" alt="logo"/></NavbarBrand>
+                    </div>
+
+                    <div className="col-6 menu-items">
+                        {
+                            list.map((item, key) => (
+                                <ItemMenu linkChange={linkChange}  path={path} key={key}>{item}</ItemMenu>
+                            ))
+                        }
+                    </div>
                 </Container>
             </Navbar>
         </div>
@@ -54,16 +43,20 @@ const Header = ({list, menuLoadRequest}) => {
 };
 
 Header.propTypes = {
-    list: PropTypes.array,
-    menuLoadRequest:PropTypes.func.isRequired,
+    list: PropTypes.array.isRequired,
+    path: PropTypes.string.isRequired,
+    menuLoadRequest: PropTypes.func.isRequired,
+    linkChange: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
     list: state.menuReducer.list,
+    path:state.linkReducer.path,
 });
 
 const mapDispatchToProps = {
-    menuLoadRequest
+    menuLoadRequest,
+    linkChange
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header) 

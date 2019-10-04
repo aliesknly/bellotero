@@ -1,5 +1,6 @@
 import {combineReducers} from 'redux'
 import menuReducerStatus from './menu/menuReducerStatus';
+import linkReducer from './menu/linkReducer';
 import menuReducer from './menu/menuReducer';
 import page1Reducers from './page1/page1Reducers';
 import page1LoadStatusReducer from './page1/page1LoadStatusReducer';
@@ -10,6 +11,7 @@ export default combineReducers({
     //MENU
     menuReducer,
     menuReducerStatus,
+    linkReducer,
     //PAGE1
     page1Reducers,
     page1LoadStatusReducer,
