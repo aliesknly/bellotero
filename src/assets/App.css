@@ -5,10 +5,11 @@ body {
 .Header {
     padding: inherit;
     background-color: #ffffff;
+    height: 64px;
 }
 
 #Link {
-    font-family: 'Roboto',sans-serif;
+    font-family: "Roboto Medium",sans-serif;
     font-size: 14px !important;
     font-weight: 500 !important;
     font-style: normal !important;
@@ -132,7 +133,7 @@ input[type="range"]::-moz-range-progress {
 }
 
 .link-modify{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Medium', serif;
     font-size: 14px;
     font-weight: 500;
     font-style: normal;
@@ -140,6 +141,7 @@ input[type="range"]::-moz-range-progress {
     line-height: normal;
     letter-spacing: 0.3px;
     color: #071eb3;
+    margin-top: 10px;
 }
 .title-big{
     font-family: "Roboto Medium", sans-serif;
@@ -148,8 +150,9 @@ input[type="range"]::-moz-range-progress {
 .menu-items{
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content:space-between ;
+    height: 64px;
 }
 
 .menu-item{

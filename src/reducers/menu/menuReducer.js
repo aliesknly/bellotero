@@ -8,7 +8,7 @@ export default (state = initialState, { type, payload }) => {
     switch (type) {
         case types.LOAD_MENU_SUCCESS:
             return {
-                list: state.list.concat(payload)
+                list: payload
             }
 
         default:
