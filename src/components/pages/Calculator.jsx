@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState} from 'react';
 //Component
 import {Row, Col, FormGroup} from 'reactstrap';
 import Labels from './modules/Labels';

@@ -7,7 +7,7 @@ const ItemMenu = ({children,path,linkChange}) => {
         <div className={'menu-item'} onClick={()=>linkChange(window.location.pathname)}>
             {
                 (path === `/${children.route}` &&
-                <div style={{background: '#071eb3', height: "4px"}}/>) || <div/>
+                <div style={{background: '#071eb3', height: "4px"}}/>) || <div style={{background: '#ffffff', height: "4px"}}/>
             }
 
             <Link  id="Link" className="nav-link active link-modify" to={children.route}>{children.text}</Link>

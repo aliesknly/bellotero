@@ -1,8 +1,8 @@
-import React, { useEffect} from 'react'
+import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types';
 //ACTIONS
-import {menuLoadRequest,linkChange} from '../actions';
+import {menuLoadRequest, linkChange} from '../actions';
 //Components
 import {
     Container,
@@ -12,35 +12,35 @@ import {
 import ItemMenu from "./menu/ItemMenu";
 
 
-const Header = ({list, menuLoadRequest,linkChange,path}) => {
+const Header = ({list, menuLoadRequest, linkChange, path}) => {
     useEffect(() => {
         linkChange(window.location.pathname);
         menuLoadRequest();
         return function cleanup() {
 
         }
-    }, [linkChange,menuLoadRequest]);
+    }, [linkChange, menuLoadRequest]);
 
     return (
-        <div>
-            <Navbar className="Header" light expand="md">
-                <Container>
-                    <div className={'col-6'}>
-                        <NavbarBrand href="/"><img src="bellotero.png" alt="logo"/></NavbarBrand>
-                    </div>
 
-                    <div className="col-6 menu-items">
-                        {
-                            list.map((item, key) => (
-                                <ItemMenu linkChange={linkChange}  path={path} key={key}>{item}</ItemMenu>
-                            ))
-                        }
-                    </div>
-                </Container>
-            </Navbar>
-        </div>
+        <Navbar className="Header" light expand="md">
+            <Container>
+                <div className={'col-6'}>
+                    <NavbarBrand href="/"><img height={'26'} src="bellotero.png" alt="logo"/></NavbarBrand>
+                </div>
+
+                <div className="col-6 menu-items">
+                    {
+                        list.map((item, key) => (
+                            <ItemMenu linkChange={linkChange} path={path} key={key}>{item}</ItemMenu>
+                        ))
+                    }
+                </div>
+            </Container>
+        </Navbar>
     )
 };
+
 
 Header.propTypes = {
     list: PropTypes.array.isRequired,
@@ -51,7 +51,7 @@ Header.propTypes = {
 
 const mapStateToProps = (state) => ({
     list: state.menuReducer.list,
-    path:state.linkReducer.path,
+    path: state.linkReducer.path,
 });
 
 const mapDispatchToProps = {
