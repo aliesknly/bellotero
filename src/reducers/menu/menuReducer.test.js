@@ -5,11 +5,11 @@ import * as types from '../../actions/actionTypes';
 describe('src/reducers/menu/menuReducer.js', () => {
     const initialState = {
         list:[]
-    }
+    };
     
     it('returns the initial state', () => {
         expect(menuReducer(initialState, {})).toEqual({ list: [] })
-    })
+    });
 
     
 
@@ -19,10 +19,10 @@ describe('src/reducers/menu/menuReducer.js', () => {
             { text: "Configurator", route: "page-2" },
             { text: "Stories", route: "#" },
             { text: "About", route: "#" }
-        ]
+        ];
 
         expect(
-            menuReducer(initialState,{type:types.LOAD_MENU_SUCCESS,list})
-            ).toEqual()
+            menuReducer({},{type:types.LOAD_MENU_SUCCESS,payload:list})
+            ).toEqual({list})
     })
-})
+});
